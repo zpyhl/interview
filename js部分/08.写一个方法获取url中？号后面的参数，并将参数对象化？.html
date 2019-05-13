@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var url = 'http://www.baidu.com/?user=huixin&id=123&id=456&city=%E5%8C%97%E4%BA%AC&enabled'; 
+        function param(url){
+            var obj = {};
+            if(url.split('?') == url){
+                return '';
+            } else {
+                var arr1 = url.split('?');
+                var arr2 = arr1[1].split("&");
+                // console.log(arr2)
+                for(let i=0;i<arr2.length;i++){
+                    var arr3 = arr2[i].split("=");
+                    obj[arr3[0]] = arr3[1];
+                }
+               console.log(obj);
+            }
+        }
+        param(url);
+
+
+
+    </script>
+</body>
+</html>

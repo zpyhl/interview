@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const order = [20.17, 18.67, 1.50, "cheese", "eggs", "milk", "bread"];
+        const [total, subtotal, tax, ...items] = order;
+        console.log(total, subtotal, tax, items); //20.17 18.67 1.5  ["cheese", "eggs", "milk", "bread"]
+
+        let arr = [1,2,"2",3,2];
+        let set = new Set(arr);
+        console.log(set);  //对象
+        let newArr = Array.from(set);
+        console.log(newArr); // [1, 2, "2", 3]
+
+    </script>
+</body>
+
+</html>

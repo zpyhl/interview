@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es5继承  B 继承 A
+        // 1、构造继承 
+        function A(sex) {
+            this.sex = sex;
+        }
+        function B(name,age) {
+            this.name = name;
+            this.age = age;
+            console.log("你好,我叫" + this.name +"我今年" + age +"岁了。")
+        }
+        B.prototype = new A();
+        var b = new B("hl",21,"男");
+        console.log(b);
+
+
+
+    </script>
+
+</body>
+
+</html>

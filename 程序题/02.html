@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 12、完成foo()函数的内容，要求能弹出对话框提示当前选中的是第几个单选框 -->
+    <form name="form1" onclick="return foo()">    
+    <!-- <form name="form1" onsubmit="return foo()"> -->
+        <input type="radio" name="radioGroup">
+        <input type="radio" name="radioGroup">
+        <input type="radio" name="radioGroup">
+        <input type="radio" name="radioGroup">
+    </form>
+
+
+
+    <script type="text/javascript">
+    var inputs = document.getElementsByTagName("input");
+        function foo() {
+            for(var i=0;i<inputs.length;i++){
+                if(inputs[i].checked){
+                    alert(i+1);
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

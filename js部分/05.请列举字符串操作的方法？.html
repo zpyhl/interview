@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>请列举字符串操作的方法？</title>
+</head>
+<body>
+    <script>
+        var str1 = "abcdefghi1234";
+        var str2 = "张，小，妮，你，好";
+        // 1、charAt()返回指定位置的字符
+        console.log(str1.charAt(3));   // d
+        console.log(str1.charAt(10));   // 2
+
+        // 2、charCodeAt()返回指定位置的字符编码
+        console.log(str1.charCodeAt(3)); // 100
+        console.log(str1.charCodeAt(10)); // 50
+
+        // 3、字符串拼接 “+”  和  concat()
+        console.log(str1 + str2);    //abcdefghi1234张，小，妮，你，好
+        console.log(str2.concat(str1));   //张，小，妮，你，好abcdefghi1234
+
+        // 4、slice 基于子字符串创建新字符串，开始索引，结束索引取不到，原字符串不变
+        console.log(str1.slice(1,5));  //bcde
+
+        // 5、substr(), 开始索引，结束索引能取到
+        console.log(str1.substr(1,6));  //bcdefg
+
+        // 6、substring(), 开始索引，截取个数
+        console.log(str1.substring(2,4)); //cdef   cd
+
+        // 7、字符串位置indexOf，从左到右，找到返回位置索引，没找到返回-1
+        console.log(
+            str1.indexOf("f"));   //5
+        console.log(str1.indexOf("k"));   //-1
+
+        // 8、字符串位置lastIndexOf，从右至左，找到返回位置索引，没找到返回-1
+        console.log(str1.lastIndexOf("d"));   //3
+        console.log(str1.lastIndexOf("k"));   //-1
+
+        // 9、trim()，删除字符串前后的空格
+        var str3 = " ban ner ";
+        console.log(str3.trim());      // "ban ner"
+        console.log(str3);      // " ban ner "
+
+        // 10、toLowerCase(),toUpperCase()
+        var str4 = "SplitARR";
+        console.log(str4.toLowerCase());     //splitarr
+        console.log(str4.toUpperCase());     //SPLITARR
+        
+        // 11、字符串切割split()成数组
+        console.log(str2.split(","));   //   ["张，小，妮，你，好"]
+        console.log(str1.split(""));     //["a", "b", "c", "d", "e", "f", "g", "h", "i", "1", "2", "3", "4"]
+
+        // 12、search()，查找匹配的字符串，返回首个符合条件的字符的位置;匹配正则
+        console.log(str1.search("bcde"));     // 1
+        console.log(str1.search("de"));     // 3
+        
+        var str5 ="Mr. Blue has a blue house";
+        console.log(str5.search("blue"));   //15
+        console.log(str5.search(/blue/i));   //4   I忽略大小写
+        
+
+
+    </script>
+</body>
+</html>

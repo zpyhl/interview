@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <img id="pic" src="image/01.jpg" width="200" height="200">
+        <br />
+        <select id="sel" onchange="showImg(this)">
+            <option value="image/01.jpg">城市生活</option>
+            <option value="image/02.jpg">都市早报</option>
+            <option value="image/03.jpg">青山绿水</option>
+        </select>
+    <script>
+        var pic = document.getElementById("pic");
+        function showImg(Osel){
+            pic.src = Osel.options[selectedIndex].value;
+            // console.log(pic.src);
+        }
+// 1、var a=[]； a[0]=0；a[1]=1；a[4]=4；请问a.length的值是多少？a[3]的输出结果是什么？
+            //  5     undefined
+    
+// 2、var a=[5，6]； var b=a；  b[0]="hello"；  alert(a[0])；  请问值是多少？
+        //  复杂数据类型的赋值，地址指向内容，内容变了，地址指向内容也变了
+
+// 3、typeof(null)，typeof(undefined)，typeof(NaN)，typeof(NaN==NaN)，说出上面代码执行结果？
+        //  object   undefined    number    boolean
+
+// 10、下面这段代码想要循环延时输出结果0 1 2 3 4
+        // for (var i = 0; i < 5; ++i) {
+        //     var a = 0;
+        //     setTimeout (function () {
+        //         console.log(a++);
+        //     },100*i);
+        // }
+        // for (let i = 0; i < 5; ++i) {
+        //     setTimeout (function () {
+        //         console.log(i+'');
+        //     },100*i);
+        // }
+
+// 11、完成函数showlmg()，要求能够动态根据下拉列表的选项变化，更新图片的显示
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
