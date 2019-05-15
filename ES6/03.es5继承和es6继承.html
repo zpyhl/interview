@@ -10,21 +10,51 @@
 
 <body>
     <script>
-        // es5继承  B 继承 A
-        // 1、构造继承 
-        function A(sex) {
-            this.sex = sex;
+// ~~~~~~~~~~~~~~~~~~~ES5 组合继承 ~~~~~~~~~~~~~~~~~ 
+        function Father(name){
+            this.name = name ;
         }
-        function B(name,age) {
-            this.name = name;
+        Father.prototype.sayName = function(){
+            console.log("我是" + this.name);
+        };
+
+        function Son(name,age){
+            Father.call(this,name);
             this.age = age;
-            console.log("你好,我叫" + this.name +"我今年" + age +"岁了。")
         }
-        B.prototype = new A();
-        var b = new B("hl",21,"男");
-        console.log(b);
+        Son.prototype = new Father();
+        Son.prototype.constructor = Son;
+        Son.prototype.sayAge = function(){
+            console.log("我今年" + this.age);
+        };
+        var son1 = new Son("李磊",21);
+        son1.sayName();
+        son1.sayAge();
+        console.log(son1)
+    
+// ~~~~~~~~~~~~~~~~~~~ES6组合继承 ~~~~~~~~~~~~~~~~~ 
+        class Father{
+            constructor(name){
+                this.name = name ;
+            }
+            sayName(){
+                console.log("我是" + this.name);
+            }
+        }
 
-
+        class Son extends Father {
+            constructor(name,age){
+                super(name);
+                this.age = age;
+            }
+            sayAge(){
+                console.log("我今年" + this.age);
+            }
+        }
+        var son2 = new Son("韩梅梅",18);        
+        son2.sayName();
+        son2.sayAge();
+        console.log(son2)
 
     </script>
 
