@@ -4,33 +4,40 @@ import PostList from '@/components/PostList'
 import Article from '@/components/Article'
 import SideBar from '@/components/SideBar'
 import UserInfo from '@/components/UserInfo'
+import Table from '@/components/Table'
 
 Vue.use(Router)
 
 export default new Router({
-	mode: 'history',
-  routes: [
-    {
+  mode: 'history',
+  routes: [{
       path: '/',
       name: 'root',
       components: {
-      	main:PostList
+        main: PostList
       }
     },
     {
-    	path:'/topic/:id&auther=:name',
-    	name:'post_content',
-    	components:{
-    		main:Article,
-    		sidebar:SideBar
-    	},
+      path: '/topic/:id&auther=:name',
+      name: 'post_content',
+      components: {
+        main: Article,
+        sidebar: SideBar
+      },
     },
     {
-    	path:'/user/:name',
-    	name:'user_info',
-    	components:{
-    		main:UserInfo,
-    	}
+      path: '/user/:name',
+      name: 'user_info',
+      components: {
+        main: UserInfo,
+      }
+    },
+    {
+      path: '/table',
+      name: 'table',
+      components: {
+        main: Table,
+      }
     }
   ]
 })
